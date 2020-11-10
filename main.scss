@@ -1,0 +1,247 @@
+//imports
+@import "utilities";
+@import "variables";
+@import "documentObject";
+
+//reusable blocks of classes
+.headingSecondary {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 100;
+}
+
+.paragraph {
+    line-height: 20px;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+//header
+.header {
+    grid-row: 1 / 2;
+
+    &__heading {
+        grid-column: 2 / 3;
+
+        &--front {
+            display: block;
+            z-index: 10;
+            position: absolute;
+            top: 3.4rem;
+            right: 2.25rem;
+            font-size: 3.7rem;
+            color: $colorWhite;
+            background-color: rgba($colorBlack, 0.5);
+            padding: 1rem 1.6rem;
+        }
+
+        &--back {
+            font-size: 7.1rem;
+            display: block;
+            z-index: 0;
+            position: absolute;
+            top: -1.2rem;
+            left: -0.3rem;
+            color: $colorPrimary;
+        }
+
+        &Position {
+            position: relative;
+            width: 100%;
+            margin-top: 2rem;
+        }
+    }
+
+    &__list {
+        grid-column: 3 / 5;
+    }
+}
+
+.list {
+    // width: 100%;
+    list-style: none;
+    display: flex;
+    // align-items: stretch;
+    // align-content: stretch;
+    justify-content: space-between;
+    // margin-left: -1rem;
+    align-items: center;
+
+    &--item {
+        position: relative;
+        flex-basis: 18%;
+        background-color: transparent;
+        font-size: 2.3rem;
+        color: $colorText;
+        padding: 1rem;
+        text-align: center;
+        height: 11rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scaleY(0);
+            transform-origin: center top 0;
+            background-color: $colorPrimary;
+            z-index: -1;
+            transition: all 0.2s;
+            // &:hover {
+            //     height: 100%;
+            // }
+        }
+
+        //selected state for Javascript
+        &:hover::before,
+        &:hover {
+            transform: scaleY(1);
+            color: white
+        }
+
+    }
+}
+
+
+.features {
+    grid-row: 2 / 3;
+    display: flex;
+
+    &__box {
+        border: 1px solid rgba($colorBorder, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:hover {
+            background-color: $colorGreyLight;
+        }
+
+
+        &--heading {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        &--paragraph {
+            padding: 1.5rem;
+            text-align: justify;
+            font-size: 1.9rem;
+        }
+
+        &--btn {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            // margin: 0 auto;
+            width: 10rem;
+            height: 4.3rem;
+            background-color: $colorPrimary;
+            color: $colorWhite;
+            border: none;
+
+            transition: all 0.2s;
+
+            &:hover {
+                background-color: $colorPrimaryDark;
+            }
+
+            &:active {
+                // &:focus {
+                color: $colorGreyMediumLight;
+            }
+        }
+    }
+}
+
+.eventsContainer {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eventBoxAdjustmant {}
+
+.events {
+    grid-row: 3 / 4;
+    padding: 2rem 0;
+    border-top: 1px dotted black;
+    margin-top: 4rem;
+
+    &__heading {}
+}
+
+.eventsBox {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__headingTertiary {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &__paragraph {
+        text-align: justify;
+        font-size: 1.8rem;
+        line-height: 17px;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            margin-top: 1rem;
+            align-self: flex-end;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: $colorPrimary;
+        }
+
+
+        &:hover {
+            color: $colorPrimaryDark;
+        }
+    }
+}
+
+.projects {
+    grid-row: 4 / 5;
+    grid-column: 2 / 4;
+}
+
+.standards {
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
+}
+
+.partners {
+    grid-row: 5 / 6;
+}
+
+
+footer {
+    grid-row: 7 / 8;
+    grid-column: 1 / 6;
+}
